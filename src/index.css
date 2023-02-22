@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --bg: #fff;
+  --text: #382b22;
+  --light-pink: #fff0f0;
+  --pink: #ffe9e9;
+  --dark-pink: #f9c4d2;
+  --pink-border: #b18597;
+  --pink-shadow: #ffe3e2;
+
+}
+
+@media (prefers-color-scheme: light) {
+  .funnel {
+    border: 1px solid rgb(128, 128, 128);
+  }
+}
+
+.start-game-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: var(--light-pink);
+    border: 2px solid var(--pink-border);
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+    color: black;
+  }
+
+  .start-game-button:active {
+      background: var(--pink) !important;  
+      transform: translate(0em, 0.75em) !important;
+  }
+
+  .start-game-button:active::before {
+      box-shadow: 0 0 0 2px var(--pink-border), 0 0 var(--pink-shadow) !important;
+      transform: translate3d(0, 0, -1em) !important;
+  }
+
+  .start-game-button::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--dark-pink);
+      border-radius: inherit;
+      /* box-shadow: 0 0 0 2px var(--pink-border), 0 0.625em 0 0 var(--pink-shadow); */
+      transform: translate3d(0, 0.75em, -1em);
+      transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+    }
+
+    .start-game-button:hover {
+      background: var(--pink);
+      transform: translate(0, 0.25em);
+      }
+    .start-game-button:hover::before {
+        /* box-shadow: 0 0 0 2px var(--pink-border), 0 0.5em 0 0 var(--pink-shadow); */
+        transform: translate3d(0, 0.5em, -1em);
+    }
+
+    #tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
